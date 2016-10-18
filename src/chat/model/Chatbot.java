@@ -21,6 +21,7 @@ public class Chatbot
 	public Chatbot(String userName)
 	{
 		this.memesList = new ArrayList<String>();
+		this.userName = new String (userName);
 
 	}
 
@@ -37,9 +38,17 @@ public class Chatbot
 	 * String is empty or null, otherwise returns true. * @param currentInput * @return
 	 * A true or false based on the length of the supplied String.
 	 */
+	
 	public boolean lengthChecker(String currentInput)
 	{
-		return false;
+		boolean hasLength = false;
+		
+		if (currentInput != null && currentInput.length() > 0)
+		{
+			hasLength = true;
+		}
+		
+		return hasLength;
 	}
 
 	/**

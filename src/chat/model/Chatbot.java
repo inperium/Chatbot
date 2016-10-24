@@ -103,7 +103,13 @@ public class Chatbot
 	 */
 	public boolean contentChecker(String currentInput)
 	{
-		return false;
+		Boolean hasContent = false;
+		
+		if(currentInput.contains(content)){
+			hasContent = true;
+		}
+		
+		return hasContent;
 	}
 
 	/**

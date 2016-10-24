@@ -26,6 +26,7 @@ public class Chatbot
 		this.userName = new String (userName);
 		this.content = new String("Not Bad Stuff");
 		this.buildMemesList();
+		this.buildPoliticalTopicsList();
 		
 
 	}
@@ -42,12 +43,36 @@ public class Chatbot
 		memesList.add("steal yo gurl");
 		memesList.add("steal your gurl");
 		memesList.add("doge");
-		memesList.add("let's eat grandma");
+		memesList.add("dat boy");
+		memesList.add("clowns");
+		memesList.add("fracking");
+		memesList.add("Pokemon Go");
+		memesList.add("Willy Wonka");
 		
 	}
 
 	private void buildPoliticalTopicsList()
 	{
+		politicalTopicList.add("Trump");
+		politicalTopicList.add("Hillary");
+		politicalTopicList.add("Jill Stein");
+		politicalTopicList.add("Putin");
+		politicalTopicList.add("Russian Hackers");
+		politicalTopicList.add("Mexico");
+		politicalTopicList.add("the wall");
+		politicalTopicList.add("deleted emails");
+		politicalTopicList.add("voting fraud");
+		politicalTopicList.add("libertarian");
+		politicalTopicList.add("tea party");
+		politicalTopicList.add("racism");
+		politicalTopicList.add("taxes");
+		politicalTopicList.add("Obama Care");
+		politicalTopicList.add("Radical Islam");
+		politicalTopicList.add("money");
+		politicalTopicList.add("Gary Johnson");
+		politicalTopicList.add("Bernie Sanders");
+		politicalTopicList.add("DNC");
+		politicalTopicList.add("RNC");
 	}
 
 	/**

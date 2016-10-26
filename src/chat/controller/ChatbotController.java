@@ -38,7 +38,6 @@ public class ChatbotController
 		{
 			answer += "\nI can has memes?\n";	
 		}
-		
 		if(answer.length() == 0)
 		{
 			answer += "Sorry, I don't know about " + input +  ".";

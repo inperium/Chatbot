@@ -16,13 +16,35 @@ public class ChatbotController
 		
 		public void start()
 	{
-			String response = "talking to you";
+			String response = chatView.collectResponse("What do you want to talk about?");
 			
 			while(stupidBot.lengthChecker(response))
 			{
-				response = chatView.collectResponse("WYD???!?");
+				chatView.displayMessage(useChatbotCheckers(response));
+				response = chatView.collectResponse("Oh, you're interested in " + response +"?");
 			}
-			
+		
+	}
+	
+	private String useChatbotCheckers(String input)
+	{
+		String answer = "";
+		
+		if(stupidBot.contentChecker(input))
+		{
+			answer += "\nYou konw my special secret\n";
+		}
+		if(stupidBot.memeChecker(input))
+		{
+			answer += "\nI can has memes?\n";	
+		}
+		
+		if(answer.length() == 0)
+		{
+			answer += "Sorry, I don't know about " + input +  ".";
+		}
+		
+		return answer;
 	}
 	
 }

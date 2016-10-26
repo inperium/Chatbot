@@ -123,7 +123,16 @@ public class Chatbot
 	 */
 	public boolean politicalTopicChecker(String currentInput)
 	{
-		return false;
+		boolean politicalChecker = false;
+		for(int politicalNames = 0; politicalNames < politicalTopicList.size(); politicalNames++)
+		{
+			if(currentInput != null && currentInput.equals(politicalTopicList.get(politicalNames)))
+			{
+				politicalChecker = true;
+			}
+		}
+				
+		return politicalChecker;
 	}
 
 	/**
@@ -136,8 +145,19 @@ public class Chatbot
 	 */
 	public boolean memeChecker(String currentInput)
 	{
-		return false;
+		boolean memeChecker = false;
+		for(int memeNames = 0; memeNames < memesList.size(); memeNames++)
+		{
+			if(currentInput != null && currentInput.equalsIgnoreCase(memesList.get(memeNames)))
+			{
+				memeChecker = true;
+			}
+		}
+				
+		return memeChecker;
+
 	}
+	
 
 	/**
 	 * * Returns the username of this Chatbot instance. * @return The username

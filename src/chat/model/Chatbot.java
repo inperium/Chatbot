@@ -15,8 +15,8 @@ public class Chatbot
 	private String content;
 
 	/**
-	 * * Creates an instance of the Chatbot with the supplied username. * @param
-	 * userName The username for the chatbot.
+	 * Creates an instance of the Chatbot with the supplied username. 
+	 * @param userName The username for the chatbot. 
 	 */
 	public Chatbot(String userName)
 	{
@@ -27,8 +27,6 @@ public class Chatbot
 		this.content = new String("Not Bad Stuff");
 		this.buildMemesList();
 		this.buildPoliticalTopicsList();
-		
-
 	}
 
 	private void buildMemesList()
@@ -40,8 +38,8 @@ public class Chatbot
 		memesList.add("john");
 		memesList.add("cute animals");
 		memesList.add("babies");
-		memesList.add("steal yo gurl");
-		memesList.add("steal your gurl");
+		memesList.add("mr steal yo girl");
+		memesList.add("steal your girl");
 		memesList.add("doge");
 		memesList.add("dat boy");
 		memesList.add("clowns");
@@ -62,7 +60,7 @@ public class Chatbot
 		politicalTopicList.add("the wall");
 		politicalTopicList.add("deleted emails");
 		politicalTopicList.add("voting fraud");
-		politicalTopicList.add("libertarian");
+		politicalTopicList.add("Libertarian");
 		politicalTopicList.add("tea party");
 		politicalTopicList.add("racism");
 		politicalTopicList.add("taxes");
@@ -73,53 +71,59 @@ public class Chatbot
 		politicalTopicList.add("Bernie Sanders");
 		politicalTopicList.add("DNC");
 		politicalTopicList.add("RNC");
+		politicalTopicList.add("Mexicans");
+		politicalTopicList.add("Communism");
+		politicalTopicList.add("news");
+		politicalTopicList.add("CNN");
+		politicalTopicList.add("Fox");
+		politicalTopicList.add("Judge");
+		politicalTopicList.add("Democratic");
+		politicalTopicList.add("Republican");
+		politicalTopicList.add("Democrat");
+		politicalTopicList.add("Supreme Court");
+		politicalTopicList.add("Campain");
+		politicalTopicList.add("Hillary for prison");
+		politicalTopicList.add("Illegal Immigrants");
 	}
 
 	/**
-	 * * Checks the length of the supplied string. Returns false if the supplied
+	 * Checks the length of the supplied string. Returns false if the supplied
 	 * String is empty or null, otherwise returns true. * @param currentInput * @return
 	 * A true or false based on the length of the supplied String.
 	 */
-	
+
 	public boolean lengthChecker(String currentInput)
 	{
 		boolean hasLength = false;
-		
 		if (currentInput != null && currentInput.length() > 0)
 		{
 			hasLength = true;
 		}
-		
+
 		return hasLength;
 	}
 
 	/**
-	 * * Checks if the supplied String matches the content area for this Chatbot
-	 * instance.
-	 * 
-	 * @param currentInput
-	 *            The supplied String to be checked. * @return Whether it
-	 *            matches the content area.
+	 * Checks if the supplied String matches the content area for this Chatbot instance.
+	 * @param currentInput The supplied String to be checked. * @return Whether it matches the content area.
 	 */
 	public boolean contentChecker(String currentInput)
 	{
 		Boolean hasContent = false;
-		
-		if(currentInput.contains(content)){
+
+		if(currentInput.toLowerCase().contains(content.toLowerCase()))
+		{
 			hasContent = true;
 		}
-		
+
 		return hasContent;
-	}
+		}
 
 	/**
-	 * * Checks if supplied String matches ANY of the topics in the
+	 * Checks if supplied String matches ANY of the topics in the
 	 * politicalTopicsList. Returns true if it does find a match and false if it
-	 * does not match.
-	 * 
-	 * @param currentInput
-	 *            The supplied String to be checked. * @return Whether the
-	 *            String is contained in the ArrayList.
+	 * does not match. 
+	 * @param currentInput The supplied String to be checked. * @return Whether the String is contained in the ArrayList.
 	 */
 	public boolean politicalTopicChecker(String currentInput)
 	{
@@ -131,17 +135,14 @@ public class Chatbot
 				politicalChecker = true;
 			}
 		}
-				
+
 		return politicalChecker;
 	}
 
 	/**
-	 * * Checks to see that the supplied String value is in the current
+	 *Checks to see that the supplied String value is in the current
 	 * memesList variable.
-	 * 
-	 * @param currentInput
-	 *            The supplied String to be checked. * @return Whether the
-	 *            supplied String is a recognized meme.
+	 * @param currentInput The supplied String to be checked. * @return Whether the supplied String is a recognized meme.
 	 */
 	public boolean memeChecker(String currentInput)
 	{
@@ -153,11 +154,10 @@ public class Chatbot
 				memeChecker = true;
 			}
 		}
-				
+
 		return memeChecker;
 
 	}
-	
 
 	/**
 	 * * Returns the username of this Chatbot instance. * @return The username
@@ -178,8 +178,8 @@ public class Chatbot
 	}
 
 	/**
-	 * * Getter method for the memesList object. * @return The reference to the
-	 * meme list.
+	 *Getter method for the memesList object. * @return The reference to the
+	 *meme list.
 	 */
 	public ArrayList<String> getMemesList()
 	{

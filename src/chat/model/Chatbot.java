@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Chatbot
 {
 	private ArrayList<String> memesList;
-	private ArrayList<String> politicalTopicList;
+	private ArrayList<String> politicalTopicList;;
 	private String userName;
 	private String content;
 
@@ -201,6 +201,32 @@ public class Chatbot
 	 */
 	public void setContent(String content)
 	{
+	}
+
+	public boolean keyboardMashChecker(String currentInput)
+	{
+		boolean mash = false;
+		
+		if(currentInput.contains("sdf")){
+			mash = true;
+		}else if(currentInput.contains("dfg")){
+			mash = true;
+		}else if(currentInput.contains("cvb")){
+			mash = true;
+		}else if(currentInput.contains(",./")){
+			mash = true;
+		}
+		return mash;
+	}
+
+	public boolean inputHTMLChecker(String input)
+	{
+		boolean html = false;
+		if(input.contains("<") && input.substring(0,0).contains(">"))
+		{
+			html = true;
+		}
+		return html;
 	}
 
 }

@@ -1,17 +1,20 @@
 package chat.controller;
 
 import chat.model.Chatbot;
+import chat.view.ChatFrame;
 import chat.view.ChatbotViewer;
 
 public class ChatbotController
 {
 	private Chatbot stupidBot;
 	private ChatbotViewer chatView;
+	private ChatFrame chatFrame;
 	
 	public ChatbotController()
 	{
 		stupidBot = new Chatbot("Solid Poop");
 		chatView = new ChatbotViewer();
+		chatFrame = new ChatFrame(this);
 	}
 		
 		public void start()

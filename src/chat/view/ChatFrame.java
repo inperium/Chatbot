@@ -12,7 +12,7 @@ public class ChatFrame extends JFrame
 	{
 		super();
 		this.baseController = baseController;
-		this.chatPanel = chatPanel;
+		this.chatPanel = new ChatPanel(baseController);
 		
 		this.setupFrame();
 	}
@@ -20,6 +20,8 @@ public class ChatFrame extends JFrame
 	private void setupFrame()
 	{
 		this.setContentPane(chatPanel);
+		this.setTitle("Chat Bot");
+		this.setSize(600, 400);
 		this.setVisible(true);
 	}
 }

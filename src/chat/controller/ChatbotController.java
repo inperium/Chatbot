@@ -1,5 +1,7 @@
 package chat.controller;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import chat.model.Chatbot;
 import chat.view.ChatFrame;
 import chat.view.ChatbotViewer;
@@ -9,6 +11,7 @@ public class ChatbotController
 	private Chatbot stupidBot;
 	//private ChatbotViewer chatView;
 	private ChatFrame chatFrame;
+	public String questionList[] = {"What is the meaning of life?", "What do you like to do?", "Where do you live?"};
 	
 	public ChatbotController()
 	{
@@ -73,6 +76,7 @@ public class ChatbotController
 		if(stupidBot.keyboardMashChecker(input))
 		{
 			
+			answer += questionList[ThreadLocalRandom.current().nextInt(0, 3)];
 		
 		}else{
 		if(stupidBot.memeChecker(input))

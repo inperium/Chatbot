@@ -30,6 +30,33 @@ public class ChatbotController
 		 */
 		
 	}
+	/*
+	 * 	public Chatbot getChatbot(){
+			return stupidBot;
+		}
+		
+		public String useChatbotCheckers(String input)
+		{
+			String answer = "";
+			
+			if(stupidBot.contentChecker(input))
+			{
+				answer += "\nYou konw my special secret\n";
+			}
+			if(stupidBot.memeChecker(input))
+			{
+				answer += "I can has memes?\n";	
+			}
+			if(stupidBot.lengthChecker(input))
+			{
+				answer += "Sorry, I don't know about " + input +  ".";
+			}else{
+				answer += "Sometimes silence is the answer.";
+			}
+
+			
+			return answer;
+		*/
 	
 	public Chatbot getChatbot(){
 		return stupidBot;
@@ -43,19 +70,25 @@ public class ChatbotController
 		{
 			answer += "\nYou konw my special secret\n";
 		}
+		if(stupidBot.keyboardMashChecker(input))
+		{
+			
+		
+		}else{
 		if(stupidBot.memeChecker(input))
 		{
-			answer += "\nI can has memes?\n";	
-		}
+			answer += "I can has memes?\n";	
+		}else{
 		if(stupidBot.lengthChecker(input))
 		{
 			answer += "Sorry, I don't know about " + input +  ".";
 		}else{
 			answer += "Sometimes silence is the answer.";
 		}
+		}
+		}
 
 		
 		return answer;
 	}
-	
 }

@@ -220,6 +220,14 @@ public class Chatbot
 			mash = true;
 		}else if(currentInput.contains("dfg")){
 			mash = true;
+		}else if(currentInput.contains("asdf")){
+			mash = true;
+		}else if(currentInput.contains("jkl;")){
+			mash = true;
+		}else if(currentInput.contains("asdfjkl;")){
+			mash = true;
+		}else if(currentInput.contains("dfg")){
+			mash = true;
 		}else if(currentInput.contains("cvb")){
 			mash = true;
 		}else if(currentInput.contains(",./")){

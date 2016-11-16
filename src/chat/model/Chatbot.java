@@ -72,18 +72,27 @@ public class Chatbot
 		politicalTopicList.add("DNC");
 		politicalTopicList.add("RNC");
 		politicalTopicList.add("Mexicans");
-		politicalTopicList.add("Communism");
+		politicalTopicList.add("communism");
 		politicalTopicList.add("news");
 		politicalTopicList.add("CNN");
 		politicalTopicList.add("Fox");
-		politicalTopicList.add("Judge");
+		politicalTopicList.add("judge");
 		politicalTopicList.add("Democratic");
 		politicalTopicList.add("Republican");
 		politicalTopicList.add("Democrat");
-		politicalTopicList.add("Supreme Court");
-		politicalTopicList.add("Campain");
+		politicalTopicList.add("supreme court");
+		politicalTopicList.add("campain");
 		politicalTopicList.add("Hillary for prison");
-		politicalTopicList.add("Illegal Immigrants");
+		politicalTopicList.add("illegal immigrants");
+		politicalTopicList.add("election");
+		politicalTopicList.add("Kaine");
+		politicalTopicList.add("liberal");
+		politicalTopicList.add("conservative");
+		politicalTopicList.add("Clinton");
+		politicalTopicList.add("Pence");
+		politicalTopicList.add("11/8/2016");
+		politicalTopicList.add("Stein");
+		politicalTopicList.add("Johnson");
 	}
 
 	/**

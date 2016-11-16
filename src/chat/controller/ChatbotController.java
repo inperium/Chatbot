@@ -7,29 +7,35 @@ import chat.view.ChatbotViewer;
 public class ChatbotController
 {
 	private Chatbot stupidBot;
-	private ChatbotViewer chatView;
+	//private ChatbotViewer chatView;
 	private ChatFrame chatFrame;
 	
 	public ChatbotController()
 	{
-		stupidBot = new Chatbot("Solid Poop");
-		chatView = new ChatbotViewer();
+		stupidBot = new Chatbot("Steve");
+		//chatView = new ChatbotViewer();
 		chatFrame = new ChatFrame(this);
 	}
 		
-		public void start()
+	public void start()
 	{
-			String response = chatView.collectResponse("What do you want to talk about?");
+		/*
+		 * String response = chatView.collectResponse("What do you want to talk about?");
 			
 			while(stupidBot.lengthChecker(response))
 			{
 				chatView.displayMessage(useChatbotCheckers(response));
 				response = chatView.collectResponse("Oh, you're interested in " + response +"?");
 			}
+		 */
 		
 	}
 	
-	private String useChatbotCheckers(String input)
+	public Chatbot getChatbot(){
+		return stupidBot;
+	}
+	
+	public String useChatbotCheckers(String input)
 	{
 		String answer = "";
 		
@@ -41,10 +47,13 @@ public class ChatbotController
 		{
 			answer += "\nI can has memes?\n";	
 		}
-		if(answer.length() == 0)
+		if(stupidBot.lengthChecker(input))
 		{
 			answer += "Sorry, I don't know about " + input +  ".";
+		}else{
+			answer += "Sometimes silence is the answer.";
 		}
+
 		
 		return answer;
 	}

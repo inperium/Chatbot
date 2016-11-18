@@ -79,6 +79,10 @@ public class ChatbotController
 			answer += questionList[ThreadLocalRandom.current().nextInt(0, 3)];
 		
 		}else{
+		if(stupidBot.harambeChecker(input))
+		{
+				answer += "Harambe was innocent.\n";	
+		}else{
 		if(stupidBot.memeChecker(input))
 		{
 			answer += "I can has memes?\n";	
@@ -88,6 +92,7 @@ public class ChatbotController
 			answer += "Sorry, I don't know about " + input +  ".";
 		}else{
 			answer += "Sometimes silence is the answer.";
+		}
 		}
 		}
 		}

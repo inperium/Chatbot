@@ -119,6 +119,11 @@ public class Chatbot
 	public boolean contentChecker(String currentInput)
 	{
 		Boolean hasContent = false;
+		
+		if(currentInput.toLowerCase().contains(content.toLowerCase()))
+		{
+			hasContent = true;
+		}
 
 		if(currentInput.toLowerCase().contains(content.toLowerCase()))
 		{
@@ -127,6 +132,19 @@ public class Chatbot
 
 		return hasContent;
 		}
+	
+	public boolean harambeChecker(String currentInput)
+	{	
+	String containHarambe = "harambe";
+	boolean harambe = false;
+	
+	if(currentInput.toLowerCase().contains(containHarambe.toLowerCase()))
+	{
+		harambe = true;
+	}
+	
+	return harambe;
+	}
 
 	/**
 	 * Checks if supplied String matches ANY of the topics in the

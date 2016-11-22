@@ -9,9 +9,21 @@ import java.util.ArrayList;
  */
 public class Chatbot
 {
+	/**
+	 * The list of memes.
+	 */
 	private ArrayList<String> memesList;
-	private ArrayList<String> politicalTopicList;;
+	/**
+	 * The list of political topics.
+	 */
+	private ArrayList<String> politicalTopicList;
+	/**
+	 * The name of the chatBot.
+	 */
 	private String userName;
+	/**
+	 * The topic being discussed.
+	 */
 	private String content;
 
 	/**
@@ -21,10 +33,9 @@ public class Chatbot
 	public Chatbot(String userName)
 	{
 		this.politicalTopicList = new ArrayList<String>();
-		this.content = new String ("content");
+		this.content = content;
 		this.memesList = new ArrayList<String>();
-		this.userName = new String (userName);
-		this.content = new String("Not Bad Stuff");
+		this.userName = userName;
 		this.buildMemesList();
 		this.buildPoliticalTopicsList();
 	}
@@ -32,7 +43,8 @@ public class Chatbot
 	private void buildMemesList()
 	{
 		memesList.add("Harambe");
-		memesList.add("John Cena");
+		memesList.add("harambe");
+		memesList.add("john cena");
 		memesList.add("Arthur");
 		memesList.add("cat");
 		memesList.add("john");
@@ -46,7 +58,14 @@ public class Chatbot
 		memesList.add("fracking");
 		memesList.add("Pokemon Go");
 		memesList.add("Willy Wonka");
-		
+		memesList.add("Juan Cena");
+		memesList.add("the wall");
+		memesList.add("Dancing baby");
+		memesList.add("Happy Tree Friends");
+		memesList.add("Success Kid");
+		memesList.add("willy wonka");
+		memesList.add("grumpy cat");
+		memesList.add("dat boi");
 	}
 
 	private void buildPoliticalTopicsList()
@@ -71,7 +90,7 @@ public class Chatbot
 		politicalTopicList.add("Bernie Sanders");
 		politicalTopicList.add("DNC");
 		politicalTopicList.add("RNC");
-		politicalTopicList.add("Mexicans");
+		politicalTopicList.add("Johnson");
 		politicalTopicList.add("communism");
 		politicalTopicList.add("news");
 		politicalTopicList.add("CNN");
@@ -90,9 +109,10 @@ public class Chatbot
 		politicalTopicList.add("conservative");
 		politicalTopicList.add("Clinton");
 		politicalTopicList.add("Pence");
-		politicalTopicList.add("11/8/2016");
+
 		politicalTopicList.add("Stein");
-		politicalTopicList.add("Johnson");
+		politicalTopicList.add("11/8/16");
+		
 	}
 
 	/**
@@ -194,14 +214,20 @@ public class Chatbot
 	{
 		return userName;
 	}
-
-	/**
-	 * * Returns the content area for this Chatbot instance. * @return The
-	 * content area for this Chatbot instance.
-	 */
+	
+	public void setUserName(String userName)
+	{
+		this.userName = userName;
+	}
+	
 	public String getContent()
 	{
 		return content;
+	}
+	
+	public void setContent(String content)
+	{
+		this.content = content;
 	}
 
 	/**
@@ -226,9 +252,6 @@ public class Chatbot
 	 * * Updates the content area for this Chatbot instance. * @param content
 	 * The updated value for the content area.
 	 */
-	public void setContent(String content)
-	{
-	}
 
 	public boolean keyboardMashChecker(String currentInput)
 	{

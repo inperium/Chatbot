@@ -9,7 +9,7 @@ import chat.view.ChatbotViewer;
 public class ChatbotController
 {
 	private Chatbot stupidBot;
-	//private ChatbotViewer chatView;
+	private ChatbotViewer chatView;
 	private ChatFrame chatFrame;
 	public String questionList[] = {"What is the meaning of life?", "What do you like to do?", "Where do you live?"};
 	
@@ -69,6 +69,8 @@ public class ChatbotController
 	{
 		String answer = "";
 		
+		if(!stupidBot.quitChecker(input))
+		{
 		if(stupidBot.contentChecker(input))
 		{
 			answer += "\nYou konw my special secret\n";
@@ -96,7 +98,9 @@ public class ChatbotController
 		}
 		}
 		}
-
+		}else{
+			System.exit(0);
+		}
 		
 		return answer;
 	}

@@ -264,4 +264,14 @@ public class Chatbot
 		return html;
 	}
 
+	public boolean quitChecker(String input)
+	{
+		boolean quit = false;
+		if(input.equalsIgnoreCase("quit"))
+		{
+			quit = true;
+		}
+		return quit;
+	}
+
 }

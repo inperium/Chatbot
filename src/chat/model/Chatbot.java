@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Chatbot
 {
 	private ArrayList<String> memesList;
-	private ArrayList<String> politicalTopicList;
+	private ArrayList<String> politicalTopicList;;
 	private String userName;
 	private String content;
 
@@ -72,18 +72,27 @@ public class Chatbot
 		politicalTopicList.add("DNC");
 		politicalTopicList.add("RNC");
 		politicalTopicList.add("Mexicans");
-		politicalTopicList.add("Communism");
+		politicalTopicList.add("communism");
 		politicalTopicList.add("news");
 		politicalTopicList.add("CNN");
 		politicalTopicList.add("Fox");
-		politicalTopicList.add("Judge");
+		politicalTopicList.add("judge");
 		politicalTopicList.add("Democratic");
 		politicalTopicList.add("Republican");
 		politicalTopicList.add("Democrat");
-		politicalTopicList.add("Supreme Court");
-		politicalTopicList.add("Campain");
+		politicalTopicList.add("supreme court");
+		politicalTopicList.add("campain");
 		politicalTopicList.add("Hillary for prison");
-		politicalTopicList.add("Illegal Immigrants");
+		politicalTopicList.add("illegal immigrants");
+		politicalTopicList.add("election");
+		politicalTopicList.add("Kaine");
+		politicalTopicList.add("liberal");
+		politicalTopicList.add("conservative");
+		politicalTopicList.add("Clinton");
+		politicalTopicList.add("Pence");
+		politicalTopicList.add("11/8/2016");
+		politicalTopicList.add("Stein");
+		politicalTopicList.add("Johnson");
 	}
 
 	/**
@@ -110,6 +119,11 @@ public class Chatbot
 	public boolean contentChecker(String currentInput)
 	{
 		Boolean hasContent = false;
+		
+		if(currentInput.toLowerCase().contains(content.toLowerCase()))
+		{
+			hasContent = true;
+		}
 
 		if(currentInput.toLowerCase().contains(content.toLowerCase()))
 		{
@@ -118,6 +132,19 @@ public class Chatbot
 
 		return hasContent;
 		}
+	
+	public boolean harambeChecker(String currentInput)
+	{	
+	String containHarambe = "harambe";
+	boolean harambe = false;
+	
+	if(currentInput.toLowerCase().contains(containHarambe.toLowerCase()))
+	{
+		harambe = true;
+	}
+	
+	return harambe;
+	}
 
 	/**
 	 * Checks if supplied String matches ANY of the topics in the
@@ -159,7 +186,7 @@ public class Chatbot
 
 	}
 
-	/**
+	/*
 	 * * Returns the username of this Chatbot instance. * @return The username
 	 * of the Chatbot.
 	 */
@@ -201,6 +228,50 @@ public class Chatbot
 	 */
 	public void setContent(String content)
 	{
+	}
+
+	public boolean keyboardMashChecker(String currentInput)
+	{
+		boolean mash = false;
+		
+		if(currentInput.contains("sdf")){
+			mash = true;
+		}else if(currentInput.contains("dfg")){
+			mash = true;
+		}else if(currentInput.contains("asdf")){
+			mash = true;
+		}else if(currentInput.contains("jkl;")){
+			mash = true;
+		}else if(currentInput.contains("asdfjkl;")){
+			mash = true;
+		}else if(currentInput.contains("dfg")){
+			mash = true;
+		}else if(currentInput.contains("cvb")){
+			mash = true;
+		}else if(currentInput.contains(",./")){
+			mash = true;
+		}
+		return mash;
+	}
+
+	public boolean inputHTMLChecker(String input)
+	{
+		boolean html = false;
+		if(input.contains("<") && input.substring(0,0).contains(">"))
+		{
+			html = true;
+		}
+		return html;
+	}
+
+	public boolean quitChecker(String input)
+	{
+		boolean quit = false;
+		if(input.equalsIgnoreCase("quit"))
+		{
+			quit = true;
+		}
+		return quit;
 	}
 
 }

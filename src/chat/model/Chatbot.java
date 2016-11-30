@@ -285,11 +285,27 @@ public class Chatbot
 
 	public boolean inputHTMLChecker(String input)
 	{
-		boolean html = false;
-		if(input.contains("<") && input.substring(0,0).contains(">"))
+		boolean html = true;
+		String space = input.replaceAll("\\s","");
+	
+		int firstOpenTagIndex = -1;
+		int firstCloseTagIndex = -1;
+		int secondOpenTagIndex = -1;
+		int secondCloseTagIndex = -1;
+		
+		char [] characters = space.toCharArray();
+		
+		for(int index = 0; index < characters.length; index++)
 		{
-			html = true;
+			char character = characters[index];	
 		}
+		
+		//if(noSpace.substring(input.indexOf('<'), input.length()).startsWith(">"))
+		//{
+			html = false;
+		//}
+		
+		
 		return html;
 	}
 

@@ -12,18 +12,19 @@ import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.xml.soap.Text;
 
-import chat.controller.ChatbotController;
+import chat.controller.ChatController;
 
 public class ChatPanel extends JPanel
 {
-	private ChatbotController baseController;
+	private ChatController baseController;
 	private SpringLayout baseLayout;
 	private  JTextArea chatDisplay;
 	private JTextField chatField;
 	private JScrollPane chatScrollPane;
 	private JButton chatButton;
+	private JButton secondButton;
 	
-	public ChatPanel(ChatbotController baseController)
+	public ChatPanel(ChatController baseController)
 	{
 		super();
 		this.baseController = baseController;
@@ -31,6 +32,7 @@ public class ChatPanel extends JPanel
 		chatDisplay = new JTextArea(5,40);
 		chatField = new JTextField(25);
 		chatButton = new JButton("Chat");
+		secondButton = new JButton("Quit Chat");
 		chatScrollPane = new JScrollPane(chatDisplay);
 		
 		setupPanel();
@@ -45,6 +47,7 @@ public class ChatPanel extends JPanel
 		this.add(chatScrollPane);
 		this.add(chatButton);
 		this.add(chatField);
+		this.add(secondButton);
 	}
 	
 	private void setupLayout()
@@ -86,6 +89,15 @@ public class ChatPanel extends JPanel
 				chatDisplay.append("\nYou said: " + userWords + "\n" + baseController.getChatbot().getUserName() + " said: " + botResponse);
 				chatField.setText("");
 				chatDisplay.setCaretPosition(chatDisplay.getDocument().getLength());
+			}
+		});
+		
+		secondButton.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				System.exit(0);
 			}
 		});
 	}

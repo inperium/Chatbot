@@ -6,17 +6,17 @@ import chat.model.Chatbot;
 import chat.view.ChatFrame;
 import chat.view.ChatbotViewer;
 
-public class ChatbotController
+public class ChatController
 {
 	private Chatbot stupidBot;
 	private ChatbotViewer chatView;
 	private ChatFrame chatFrame;
 	public String questionList[] = {"What is the meaning of life?", "What do you like to do?", "Where do you live?"};
 	
-	public ChatbotController()
+	public ChatController()
 	{
 		stupidBot = new Chatbot("Steve");
-		//chatView = new ChatbotViewer();
+		chatView = new ChatbotViewer();
 		chatFrame = new ChatFrame(this);
 	}
 		
@@ -101,7 +101,12 @@ public class ChatbotController
 		}else{
 			System.exit(0);
 		}
-		
+		chatView.displayMessage("Thank you for chatting!");
 		return answer;
+	}
+
+	public ChatFrame getBaseFrame()
+	{
+		return this.chatFrame;
 	}
 }

@@ -109,7 +109,6 @@ public class Chatbot
 		politicalTopicList.add("conservative");
 		politicalTopicList.add("Clinton");
 		politicalTopicList.add("Pence");
-
 		politicalTopicList.add("Stein");
 		politicalTopicList.add("11/8/16");
 		
@@ -198,7 +197,14 @@ public class Chatbot
 		{
 			if(currentInput != null && currentInput.equalsIgnoreCase(memesList.get(memeNames)))
 			{
-				memeChecker = true;
+					memeChecker = true;
+					ArrayList<String> invalidMemes = new ArrayList<String>();
+					invalidMemes.add("dat boy");
+					invalidMemes.add("ambe");
+					invalidMemes.add("john");
+					if(invalidMemes.contains(currentInput.toLowerCase())){
+						memeChecker = false;
+					}
 			}
 		}
 
@@ -295,6 +301,16 @@ public class Chatbot
 			quit = true;
 		}
 		return quit;
+	}
+
+	public boolean twitterChecker(String input)
+	{
+		boolean checkTwitter = false;
+		char sub = input.toCharArray()[0];
+		if(sub == '#' || sub == '@'){
+			checkTwitter = true;
+		}
+		return checkTwitter;
 	}
 
 }

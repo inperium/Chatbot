@@ -285,26 +285,48 @@ public class Chatbot
 
 	public boolean inputHTMLChecker(String input)
 	{
-		boolean html = true;
-		String space = input.replaceAll("\\s","");
+		boolean html = false;
+		String space = input.replaceAll(" ","");
 	
-		int firstOpenTagIndex = -1;
-		int firstCloseTagIndex = -1;
-		int secondOpenTagIndex = -1;
-		int secondCloseTagIndex = -1;
+		int firstOpenTagIndex = -2;
+		int firstCloseTagIndex = -2;
+		int secondOpenTagIndex = -2;
+		int secondCloseTagIndex = -2;
 		
-		char [] characters = space.toCharArray();
-		
-		for(int index = 0; index < characters.length; index++)
+		if(space.contains("<"))
 		{
-			char character = characters[index];	
+			firstOpenTagIndex = space.indexOf('<');
+			String firstClose = space.substring(space.indexOf('<')+1);
+			if(firstClose.contains(">"))
+			{
+				if(!firstClose.startsWith(">"))
+				{
+					firstCloseTagIndex = firstClose.indexOf('>');
+					String secondOpen = firstClose.substring(firstClose.indexOf('>')+1);
+					if(secondOpen.contains("<"))
+					{
+						secondOpenTagIndex = secondOpen.indexOf('>');
+						String secondClose = secondOpen.substring(secondOpen.indexOf('<')+1);
+						if(secondClose.contains(">"))
+						{
+							html = true;
+							if(space.toLowerCase().contains("HREF"))
+							{
+								if(!space.toLowerCase().contains("HREF="));
+								{
+									html = false;
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 		
-		//if(noSpace.substring(input.indexOf('<'), input.length()).startsWith(">"))
-		//{
-			html = false;
-		//}
-		
+		if(space.contains("<P>"))
+		{
+			html = true;
+		}
 		
 		return html;
 	}

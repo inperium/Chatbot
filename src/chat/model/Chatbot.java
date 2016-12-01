@@ -303,26 +303,27 @@ public class Chatbot
 				{
 					firstCloseTagIndex = firstClose.indexOf('>');
 					String secondOpen = firstClose.substring(firstClose.indexOf('>')+1);
-					if(secondOpen.contains("<"))
+					if(secondOpen.contains("</"))
 					{
 						secondOpenTagIndex = secondOpen.indexOf('>');
 						String secondClose = secondOpen.substring(secondOpen.indexOf('<')+1);
 						if(secondClose.contains(">"))
 						{
 							html = true;
-							if(space.toLowerCase().contains("HREF"))
-							{
-								if(!space.toLowerCase().contains("HREF="));
-								{
-									html = false;
-								}
-							}
 						}
 					}
 				}
 			}
 		}
 		
+		if(space.toLowerCase().contains("href"))
+		{
+			if(!space.toLowerCase().contains("href="))
+			{
+				html = false;
+			}
+		}
+	
 		if(space.contains("<P>"))
 		{
 			html = true;

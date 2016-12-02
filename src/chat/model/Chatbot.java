@@ -40,6 +40,10 @@ public class Chatbot
 		this.buildPoliticalTopicsList();
 	}
 
+	/**
+	 * Creates a list of valid Memes that the Chatbot will recognize.
+	 */
+	
 	private void buildMemesList()
 	{
 		memesList.add("Harambe");
@@ -68,6 +72,10 @@ public class Chatbot
 		memesList.add("dat boi");
 	}
 
+	/**
+	 * Creates a list of valid Political Topics that the Chatbot will recognize.
+	 */
+	
 	private void buildPoliticalTopicsList()
 	{
 		politicalTopicList.add("Trump");
@@ -152,6 +160,12 @@ public class Chatbot
 		return hasContent;
 		}
 	
+	/**
+	 * Checks if the supplied String contains a reference to Harambe.
+	 * @param currentInput The supplied String to be checked. 
+	 * @return Whether or not it contains Harambe.
+	 */
+	
 	public boolean harambeChecker(String currentInput)
 	{	
 	String containHarambe = "harambe";
@@ -171,6 +185,7 @@ public class Chatbot
 	 * does not match. 
 	 * @param currentInput The supplied String to be checked. * @return Whether the String is contained in the ArrayList.
 	 */
+	
 	public boolean politicalTopicChecker(String currentInput)
 	{
 		boolean politicalChecker = false;
@@ -190,6 +205,7 @@ public class Chatbot
 	 * memesList variable.
 	 * @param currentInput The supplied String to be checked. * @return Whether the supplied String is a recognized meme.
 	 */
+	
 	public boolean memeChecker(String currentInput)
 	{
 		boolean memeChecker = false;
@@ -212,24 +228,40 @@ public class Chatbot
 
 	}
 
-	/*
-	 * * Returns the username of this Chatbot instance. * @return The username
-	 * of the Chatbot.
+	/**
+	 * Returns the username of this Chatbot instance. 
+	 * * @return The username of the Chatbot.
 	 */
+	
 	public String getUserName()
 	{
 		return userName;
 	}
+	
+	/**
+	 * Sets the name of the Chatbot. 
+	 * @param The username of the Chatbot.
+	 */	
 	
 	public void setUserName(String userName)
 	{
 		this.userName = userName;
 	}
 	
+	/**
+	 * Returns the content of this Chatbot. 
+	 * @return The content of the Chatbot.
+	 */
+	
 	public String getContent()
 	{
 		return content;
 	}
+	
+	/**
+	 * Sets the content of the Chatbot. 
+	 * @param The content of the Chatbot.
+	 */	
 	
 	public void setContent(String content)
 	{
@@ -237,28 +269,31 @@ public class Chatbot
 	}
 
 	/**
-	 *Getter method for the memesList object. * @return The reference to the
-	 *meme list.
+	 *Getter method for the memesList object. 
+	 * @return The reference to the Meme list.
 	 */
+	
 	public ArrayList<String> getMemesList()
 	{
 		return memesList;
 	}
 
 	/**
-	 * * Getter method for the politicalTopicList object. * @return The
-	 * reference to the political topic list.
+	 * Getter method for the politicalTopicList object. 
+	 * @return The reference to the political topic list.
 	 */
+	
 	public ArrayList<String> getPoliticalTopicList()
 	{
 		return politicalTopicList;
 	}
 
 	/**
-	 * * Updates the content area for this Chatbot instance. * @param content
-	 * The updated value for the content area.
+	 * Checks the input to see if it was spam. 
+	 * @param The current user's input.
+	 * @return Whether or not the response was spam.
 	 */
-
+	
 	public boolean keyboardMashChecker(String currentInput)
 	{
 		boolean mash = false;
@@ -282,7 +317,13 @@ public class Chatbot
 		}
 		return mash;
 	}
-
+	
+	/**
+	 * Checks the input to see if it contains valid HTML. 
+	 * @param The current user's input.
+	 * @return Whether or not the response contains HTML.
+	 */
+	
 	public boolean inputHTMLChecker(String input)
 	{
 		boolean html = false;
@@ -331,7 +372,13 @@ public class Chatbot
 		
 		return html;
 	}
-
+	
+	/**
+	 * Checks the input to see if the quit command has been entered. 
+	 * @param The current user's input.
+	 * @return Whether or not the response contains HTML.
+	 */
+	
 	public boolean quitChecker(String input)
 	{
 		boolean quit = false;
@@ -341,7 +388,13 @@ public class Chatbot
 		}
 		return quit;
 	}
-
+	
+	/**
+	 * Checks the input to see if it contains twitter related characters. 
+	 * @param The current user's input.
+	 * @return Whether or not the response contains twitter related characters.
+	 */
+	
 	public boolean twitterChecker(String input)
 	{
 		boolean checkTwitter = false;

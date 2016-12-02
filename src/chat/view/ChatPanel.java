@@ -10,7 +10,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
-import javax.xml.soap.Text;
 
 import chat.controller.ChatController;
 
@@ -38,6 +37,10 @@ public class ChatPanel extends JPanel
 		setupPanel();
 		setupLayout();
 		setupListners();
+	}
+	
+	public void showMessage(String text){
+		this.chatDisplay.setText(text);
 	}
 	
 	private void setupPanel()

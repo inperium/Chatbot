@@ -24,4 +24,8 @@ public class ChatFrame extends JFrame
 		this.setSize(600, 400);
 		this.setVisible(true);
 	}
+	
+	public ChatPanel getChatPanel(){
+		return this.chatPanel;
+	}
 }

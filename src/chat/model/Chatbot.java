@@ -9,27 +9,36 @@ import java.util.ArrayList;
  */
 public class Chatbot
 {
+	
 	/**
 	 * The list of memes.
 	 */
+	
 	private ArrayList<String> memesList;
+	
 	/**
 	 * The list of political topics.
 	 */
+	
 	private ArrayList<String> politicalTopicList;
+	
 	/**
 	 * The name of the chatBot.
 	 */
+	
 	private String userName;
+	
 	/**
 	 * The topic being discussed.
 	 */
+	
 	private String content;
 
 	/**
 	 * Creates an instance of the Chatbot with the supplied username. 
 	 * @param userName The username for the chatbot. 
 	 */
+	
 	public Chatbot(String userName)
 	{
 		this.politicalTopicList = new ArrayList<String>();
@@ -328,25 +337,18 @@ public class Chatbot
 	{
 		boolean html = false;
 		String space = input.replaceAll(" ","");
-	
-		int firstOpenTagIndex = -2;
-		int firstCloseTagIndex = -2;
-		int secondOpenTagIndex = -2;
-		int secondCloseTagIndex = -2;
 		
 		if(space.contains("<"))
 		{
-			firstOpenTagIndex = space.indexOf('<');
+
 			String firstClose = space.substring(space.indexOf('<')+1);
 			if(firstClose.contains(">"))
 			{
 				if(!firstClose.startsWith(">"))
 				{
-					firstCloseTagIndex = firstClose.indexOf('>');
 					String secondOpen = firstClose.substring(firstClose.indexOf('>')+1);
 					if(secondOpen.contains("</"))
 					{
-						secondOpenTagIndex = secondOpen.indexOf('>');
 						String secondClose = secondOpen.substring(secondOpen.indexOf('<')+1);
 						if(secondClose.contains(">"))
 						{
